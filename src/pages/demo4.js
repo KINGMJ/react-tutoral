@@ -1,38 +1,34 @@
-import React from "react";
+import React from 'react'
 
-const Button = (props) => {
+const Button = props => {
   function handleClick(e) {
-    e.preventDefault();
-    console.log("The link was clicked");
+    e.preventDefault()
+    console.log('The link was clicked')
   }
   return (
     <a href="#" onClick={handleClick}>
       Click me
     </a>
-  );
-};
+  )
+}
 
 class Toggle extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { isToggleOn: true };
+    super(props)
+    this.state = { isToggleOn: true }
 
     // 为了在回调中使用 `this`，这个绑定是必不可少的
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick() {
-    this.setState((prevState) => ({
-      isToggleOn: !prevState.isToggleOn,
-    }));
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }))
   }
 
   render() {
-    return (
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? "ON" : "OFF"}
-      </button>
-    );
+    return <button onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
   }
 }
 
@@ -43,10 +39,10 @@ const Demo4 = () => {
       <br />
       <Button />
     </div>
-  );
-};
+  )
+}
 
-export default Demo4;
+export default Demo4
 
 /**
  * 1. React 的事件命名采用小驼峰式，而不是纯小写

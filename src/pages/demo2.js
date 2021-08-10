@@ -1,22 +1,22 @@
-//函数式组件
+// 函数式组件
 // const Welcome = (props) => {
 //   return <h1>Hello, {props.name}</h1>;
 // };
 
-import React from "react";
+import React from 'react'
 
-//class 组件
+// class 组件
 class Welcome extends React.Component {
   render() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return <h1>Hello, {this.props.name}</h1>
   }
 }
 
 const Demo2 = () => {
-  return <Welcome name="jack" />;
-};
+  return <Welcome name="jack" />
+}
 
-export default Demo2;
+export default Demo2
 
 /**
  * 1. 函数式组件跟 class 组件在 React 中是等效的

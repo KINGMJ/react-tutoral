@@ -1,22 +1,22 @@
-import React from "react";
+import React from 'react'
 
 // 处理单个输入
 class NameForm extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { value: "" };
+    super(props)
+    this.state = { value: '' }
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value })
   }
 
   handleSubmit(event) {
-    alert("提交的名字" + this.state.value);
-    event.preventDefault();
+    alert('提交的名字' + this.state.value)
+    event.preventDefault()
   }
 
   render() {
@@ -24,36 +24,32 @@ class NameForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           名字：
-          <input
-            type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
-          ></input>
+          <input type="text" value={this.state.value} onChange={this.handleChange}></input>
         </label>
         <input type="submit" value="提交"></input>
       </form>
-    );
+    )
   }
 }
 
 // 处理多个输入
 class Reservation extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       isGoing: true,
-      numberOfGuests: 2,
-    };
-    this.handleInputChange = this.handleInputChange.bind(this);
+      numberOfGuests: 2
+    }
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   handleInputChange(event) {
-    const target = event.target;
-    const value = target.name === "isGoing" ? target.checked : target.value;
-    const name = target.name;
+    const target = event.target
+    const value = target.name === 'isGoing' ? target.checked : target.value
+    const name = target.name
     this.setState({
-      [name]: value,
-    });
+      [name]: value
+    })
   }
 
   render() {
@@ -61,25 +57,15 @@ class Reservation extends React.Component {
       <form>
         <label>
           参与：
-          <input
-            name="isGoing"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange}
-          />
+          <input name="isGoing" type="checkbox" checked={this.state.isGoing} onChange={this.handleInputChange} />
         </label>
         <br />
         <label>
           来宾人数：
-          <input
-            name="numberOfGuests"
-            type="number"
-            value={this.state.numberOfGuests}
-            onChange={this.handleInputChange}
-          />
+          <input name="numberOfGuests" type="number" value={this.state.numberOfGuests} onChange={this.handleInputChange} />
         </label>
       </form>
-    );
+    )
   }
 }
 
@@ -90,10 +76,10 @@ const Demo8 = () => {
       <br />
       <Reservation />
     </div>
-  );
-};
+  )
+}
 
-export default Demo8;
+export default Demo8
 
 /**
  * 1. react 中对表单的处理是通过受控组件来完成的。受控组件：控制取值的表单输入元素的组件，这一点跟 vue 的思想是完全不同的，vue 中可以通过 v-model 这个语法糖来

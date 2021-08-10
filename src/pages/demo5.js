@@ -1,49 +1,49 @@
-import React from "react";
+import React from 'react'
 
 // 使用 if 来进行条件渲染
 function UserGreeting(props) {
-  return <h1>Welcome back!</h1>;
+  return <h1>Welcome back!</h1>
 }
 
 function GuestGreeting(props) {
-  return <h1>Please sign up!</h1>;
+  return <h1>Please sign up!</h1>
 }
 
 function Greeeting(props) {
-  const isLoggedIn = props.isLoggedIn;
+  const isLoggedIn = props.isLoggedIn
   if (isLoggedIn) {
-    return <UserGreeting />;
+    return <UserGreeting />
   }
-  return <GuestGreeting />;
+  return <GuestGreeting />
 }
 
 // 使用元素变量来进行条件渲染
 function LoginButton(props) {
-  return <button onClick={props.onClick}>Login</button>;
+  return <button onClick={props.onClick}>Login</button>
 }
 
 function LogoutButton(props) {
-  return <button onClick={props.onClick}>Logout</button>;
+  return <button onClick={props.onClick}>Logout</button>
 }
 
 class LoginControl extends React.Component {
   constructor(props) {
-    super(props);
-    this.handleLoginClick = this.handleLoginClick.bind(this);
-    this.handleLogoutClick = this.handleLogoutClick.bind(this);
-    this.state = { isLoggedIn: false };
+    super(props)
+    this.handleLoginClick = this.handleLoginClick.bind(this)
+    this.handleLogoutClick = this.handleLogoutClick.bind(this)
+    this.state = { isLoggedIn: false }
   }
 
   handleLoginClick() {
-    this.setState({ isLoggedIn: true });
+    this.setState({ isLoggedIn: true })
   }
 
   handleLogoutClick() {
-    this.setState({ isLoggedIn: false });
+    this.setState({ isLoggedIn: false })
   }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isLoggedIn = this.state.isLoggedIn
     // let button;
     // if (isLoggedIn) {
     //   button = <LogoutButton onClick={this.handleLogoutClick} />;
@@ -58,34 +58,28 @@ class LoginControl extends React.Component {
     //   </div>
     // );
 
-    //使用三目运算符
+    // 使用三目运算符
     return (
       <div>
         <Greeeting isLoggedIn={isLoggedIn} />
-        {isLoggedIn ? (
-          <LogoutButton onClick={this.handleLogoutClick} />
-        ) : (
-          <LoginButton onClick={this.handleLoginClick} />
-        )}
+        {isLoggedIn ? <LogoutButton onClick={this.handleLogoutClick} /> : <LoginButton onClick={this.handleLoginClick} />}
       </div>
-    );
+    )
   }
 }
 
 // 使用与运算符&&来进行控制
 function Mailbox(props) {
-  const unreadMessages = props.unreadMessages;
+  const unreadMessages = props.unreadMessages
   return (
     <div>
       <h1>Hello!</h1>
-      {unreadMessages.length > 0 && (
-        <h2>You have {unreadMessages.length} unread messages.</h2>
-      )}
+      {unreadMessages.length > 0 && <h2>You have {unreadMessages.length} unread messages.</h2>}
     </div>
-  );
+  )
 }
 
-const messages = ["React", "Re: React"];
+const messages = ['React', 'Re: React']
 const Demo5 = () => {
   return (
     <div>
@@ -95,10 +89,10 @@ const Demo5 = () => {
       <br />
       <Mailbox unreadMessages={messages} />
     </div>
-  );
-};
+  )
+}
 
-export default Demo5;
+export default Demo5
 
 /**
  * 条件渲染的几种方式：

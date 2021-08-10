@@ -1,37 +1,35 @@
 function NumberList(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) => (
-    <li key={number.toString()}>{number}</li>
-  ));
-  return <ul>{listItems}</ul>;
+  const numbers = props.numbers
+  const listItems = numbers.map(number => <li key={number.toString()}>{number}</li>)
+  return <ul>{listItems}</ul>
 }
 
 function ListItem(props) {
-  return <li>{props.value}</li>;
+  return <li>{props.value}</li>
 }
 
 function NumberList2(props) {
-  const numbers = props.numbers;
-  const listItems = numbers.map((number) => (
+  const numbers = props.numbers
+  const listItems = numbers.map(number => (
     // key 应该在数组的上下文中被指定
     <ListItem key={number.toString()} value={number} />
-  ));
-  return <ul>{listItems}</ul>;
+  ))
+  return <ul>{listItems}</ul>
 }
 
 // 在 JSX 中嵌入 map
 function NumberList3(props) {
-  const numbers = props.numbers;
+  const numbers = props.numbers
   return (
     <ul>
-      {numbers.map((number) => (
+      {numbers.map(number => (
         <ListItem key={number.toString()} value={number} />
       ))}
     </ul>
-  );
+  )
 }
 
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 
 const Demo7 = () => {
   return (
@@ -42,10 +40,10 @@ const Demo7 = () => {
       <br />
       <NumberList3 numbers={numbers} />
     </div>
-  );
-};
+  )
+}
 
-export default Demo7;
+export default Demo7
 
 /**
  * 1. 列表必须有 key

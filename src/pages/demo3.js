@@ -1,23 +1,23 @@
-import React from "react";
+import React from 'react'
 
 class Clock extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { date: new Date() };
+    super(props)
+    this.state = { date: new Date() }
   }
 
   componentDidMount() {
-    this.timerId = setInterval(() => this.tick(), 1000);
+    this.timerId = setInterval(() => this.tick(), 1000)
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerId);
+    clearInterval(this.timerId)
   }
 
   tick() {
     this.setState({
-      date: new Date(),
-    });
+      date: new Date()
+    })
   }
 
   render() {
@@ -26,15 +26,15 @@ class Clock extends React.Component {
         <h1>Hello, world!</h1>
         <h2>It is {this.state.date.toLocaleTimeString()}</h2>
       </div>
-    );
+    )
   }
 }
 
 const Demo3 = () => {
-  return <Clock />;
-};
+  return <Clock />
+}
 
-export default Demo3;
+export default Demo3
 
 /**
  * 1. 使用 this.setState() 来更新 state，不要直接修改 state

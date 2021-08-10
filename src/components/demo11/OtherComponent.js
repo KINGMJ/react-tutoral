@@ -1,5 +1,5 @@
 const OtherComponent = () => {
-  return <div>其他的组件</div>;
-};
+  return <div>其他的组件</div>
+}
 
-export default OtherComponent;
+export default OtherComponent
