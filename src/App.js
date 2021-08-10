@@ -9,6 +9,8 @@ import Demo7 from './pages/demo7'
 import Demo8 from './pages/demo8'
 import Demo9 from './pages/demo9'
 import Demo10 from './pages/demo10'
+import Demo11 from './pages/demo11'
+import Demo12 from './pages/demo12'
 
 const routes = [
   {
@@ -50,6 +52,14 @@ const routes = [
   {
     path: '/demo10',
     component: Demo10
+  },
+  {
+    path: '/demo11',
+    component: Demo11
+  },
+  {
+    path: '/demo12',
+    component: Demo12
   }
 ]
 
