@@ -8,6 +8,7 @@ const DataSource = {
       { id: 3, content: '评论3' }
     ]
   },
+
   addChangeListener() {
     //
   },
@@ -61,7 +62,7 @@ const Comment = props => <p>{props.comment.content}</p>
 
 const CommentListWithSubscription = withSubscription(CommentList, DataSource => DataSource.getComments())
 
-const Demo14 = () => {
+const Demo15 = () => {
   return (
     <div>
       <CommentListWithSubscription />
@@ -69,7 +70,7 @@ const Demo14 = () => {
   )
 }
 
-export default Demo14
+export default Demo15
 
 /**
  * 1. HOC 组件，一种组件设计模式，利用高阶函数来完成的
