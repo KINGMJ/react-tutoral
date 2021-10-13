@@ -4,10 +4,18 @@ import store from '../app/store'
 const increment = counterSlice.actions.increment()
 
 console.log(counterSlice.actions.increment())
+// {type: "counter/increment", payload: undefined}
+
 console.log(store.getState())
+// counter: {value: 0}
 
 store.dispatch(increment)
 console.log(store.getState())
+// counter: {value: 1}
+
+const newState = counterSlice.reducer({ value: 10 }, counterSlice.actions.increment())
+console.log(newState)
+// value: 11
 
 const Demo1 = () => {
   return <div></div>
