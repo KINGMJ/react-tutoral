@@ -30,7 +30,9 @@ class LoginControl extends React.Component {
   constructor(props) {
     super(props)
     this.handleLoginClick = this.handleLoginClick.bind(this)
-    this.handleLogoutClick = this.handleLogoutClick.bind(this)
+    // 如果使用了箭头函数就不需要 bind this
+    // https://zh-hans.reactjs.org/docs/react-without-es6.html#autobinding
+    // this.handleLogoutClick = this.handleLogoutClick.bind(this)
     this.state = { isLoggedIn: false }
   }
 
@@ -62,7 +64,7 @@ class LoginControl extends React.Component {
     return (
       <div>
         <Greeeting isLoggedIn={isLoggedIn} />
-        {isLoggedIn ? <LogoutButton onClick={this.handleLogoutClick} /> : <LoginButton onClick={this.handleLoginClick} />}
+        {isLoggedIn ? <LogoutButton onClick={e => this.handleLogoutClick(e)} /> : <LoginButton onClick={this.handleLoginClick} />}
       </div>
     )
   }
