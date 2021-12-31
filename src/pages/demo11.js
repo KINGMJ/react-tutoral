@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-const OtherComponent = lazy(() => import('../components/demo11/OtherComponent'))
-const AnotherComponent = lazy(() => import('../components/demo11/AnotherComponent'))
+const OtherComponent = lazy(() => import('../components/demo10/OtherComponent'))
+const AnotherComponent = lazy(() => import('../components/demo10/AnotherComponent'))
 
 const Demo11 = () => {
   return (

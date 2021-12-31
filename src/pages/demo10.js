@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react'
 // import OtherComponent from "../components/demo11/OtherComponent";
 
-const OtherComponent = React.lazy(() => import('../components/demo11/OtherComponent'))
-const AnotherComponent = React.lazy(() => import('../components/demo11/AnotherComponent'))
+const OtherComponent = React.lazy(() => import('../components/demo10/OtherComponent'))
+const AnotherComponent = React.lazy(() => import('../components/demo10/AnotherComponent'))
 
 const Demo10 = () => {
   return (
